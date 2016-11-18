@@ -1,3 +1,6 @@
-1.����   ��־
-2.��дapplicationContext.xml  src��
-3.�������ã��������̣����bean
+1.导包   日志
+2.编写applicationContext.xml  src下
+3.加载配置，创建工程，获得bean
+
+
+4.刘晓峰进行了修改
