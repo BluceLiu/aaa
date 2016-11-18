@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- autowire="byType"   通过对象的类型自动装配，如果要求的类型对象不存在，出现空指针异常；
+	如果要求的类型对象有多个，出现无法选择的异常 -->
+	<bean name="printer" class="edu.tsinghua.printer.Printer" singleton="true" autowire="byType"/>
+	
+	
+	<bean name="ink1" class="edu.tsinghua.printer.Black">
+		<property name="color" value="黑白"></property>
+	</bean>
+	
+	<!-- <bean name="ink2" class="edu.tsinghua.printer.Color">
+		<property name="color" value="黑白"></property>
+	</bean> -->
+	<bean name="paper" class="edu.tsinghua.printer.A4">
+		<property name="size" value="a4"></property>		
+	</bean>
+
+</beans>

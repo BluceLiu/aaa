@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName" default-dependency-check="all">
+	<!-- autowire="byName"   通过对象的名称自动装配，如果对象匹配的 名称  不存在，出现空指针异常；
+	如果要求的名称  对象有多个，出现无法定义bean的异常 ；
+	如果需要的名称对象存在  但类型和定义时指定的类型不同   出现类型无法转换异常-->
+	<bean name="printer" class="edu.tsinghua.printer.Printer" singleton="true" autowire="byName"/>
+	
+	
+	<bean name="ink" class="edu.tsinghua.printer.Black">
+		<property name="color" value="黑白"></property>
+	</bean>
+	
+	
+	
+	<!-- <bean name="ink" class="edu.tsinghua.printer.B5">
+		<property name="size" value="彩色"></property>
+	</bean>
+	 --><!-- 异常 -->
+	
+	<bean name="paper" class="edu.tsinghua.printer.A4">
+		<property name="size" value="a4"></property>		
+	</bean>
+
+</beans>

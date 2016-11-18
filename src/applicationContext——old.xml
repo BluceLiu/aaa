@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean name="hs" class="edu.tsinghua.spring.HelloSpring" >
+		<property name="message" value="java,你好！"></property>
+		<!-- <property name="message">
+			<value>NIHAO!</value>
+		</property> -->
+	</bean>
+
+	<bean name="gazi" class="edu.tsinghua.gazi.Person" singleton="false">
+		<property name="name" value="嘎子"></property>
+		<property name="context" value="打到小日本！"></property>
+	</bean>
+	<bean name="rod" class="edu.tsinghua.gazi.Person">
+		<property name="name" value="Rod"></property>
+		<property name="context" value="10种人！"></property>
+	</bean>
+	<!--构造赋值  -->
+	<bean name="gouzao" class="edu.tsinghua.gazi.Person">
+		<constructor-arg>
+			<value>构造test</value>
+		</constructor-arg>
+		<constructor-arg value="说的内容！"></constructor-arg>
+	</bean>
+	
+	<bean name="gouzao1" class="edu.tsinghua.gazi.Person">
+		
+		<constructor-arg value="说的内容1！" index="1"></constructor-arg>
+		<constructor-arg index="0">
+			<value>构造test1</value>
+		</constructor-arg >
+	</bean>
+	
+	<!-- 存储案例 -->
+	<bean name="cunChu" class="edu.tsinghua.ioc.newtest.spring.CunChu">
+		<property name="pan" ref="cunchupan"></property>
+	</bean>
+	
+	<bean name="cunchupan" class="edu.tsinghua.ioc.newtest.spring.RuanPan"></bean>
+<!-- 	<bean name="cunchupan" class="edu.tsinghua.ioc.newtest.spring.YingPan"></bean> -->
+
+	<!--打印机  -->
+	<!-- singleton="true"对象占用空间和资源比较多  使用单例模式    -->
+	<bean name="printer" class="edu.tsinghua.printer.Printer" singleton="true">
+		<property name="ink" ref="ink1"></property>
+		<property name="paper" ref="paper1"></property>
+	</bean>
+	<bean name="ink1" class="edu.tsinghua.printer.Black">
+		<property name="color" value="黑白"></property>
+	</bean>
+	<bean name="paper1" class="edu.tsinghua.printer.A4">
+		<property name="size" value="a4"></property>		
+	</bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>
